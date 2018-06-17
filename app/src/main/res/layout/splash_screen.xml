@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="@drawable/background"
+    android:clipToPadding="true"
+    android:layout_marginBottom="15dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+     tools:context="app.goindia.SplashScreen">
+
+     <RelativeLayout
+         android:gravity="center"
+          android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+         <TextView
+             android:id="@+id/goindia"
+             android:background="@drawable/circle"
+             android:layout_weight="1"
+             android:textColor="@color/white"
+             android:textStyle="bold"
+             android:gravity="center"
+             android:textSize="40dp"
+             android:text="GoIndia"
+             android:padding="10dp"
+             android:layout_width="wrap_content"
+             android:layout_height="140dp" />
+     </RelativeLayout>
+
+
+</RelativeLayout>

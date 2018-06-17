@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.goindia.Careepath">
+   <include
+       layout="@layout/header_back"></include>
+   <ScrollView
+       android:layout_marginTop="55dp"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+      <LinearLayout
+          android:layout_marginBottom="20dp"
+           android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+         <android.support.v7.widget.CardView
+             android:id="@+id/beforetenth"
+             android:layout_marginTop="5dp"
+             android:layout_marginRight="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="50dp" >
+            <TextView
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="Before Tenth"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+         </android.support.v7.widget.CardView>
+         <android.support.v7.widget.CardView
+             android:id="@+id/aftertenth"
+             android:layout_marginTop="5dp"
+             android:layout_marginRight="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="50dp" >
+            <TextView
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="After Tenth"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+         </android.support.v7.widget.CardView>
+
+         <android.support.v7.widget.CardView
+             android:id="@+id/aftertenthgvtjobs"
+             android:layout_marginTop="5dp"
+             android:layout_marginRight="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="50dp" >
+            <TextView
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="After Tenth Government Jobs"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+         </android.support.v7.widget.CardView>
+          <android.support.v7.widget.CardView
+             android:id="@+id/aftertenthpvtjobs"
+             android:layout_marginTop="5dp"
+             android:layout_marginRight="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="50dp" >
+            <TextView
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="After Tenth Non-Govt Jobs"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+         </android.support.v7.widget.CardView>
+         <android.support.v7.widget.CardView
+             android:id="@+id/afterinter"
+             android:layout_marginTop="5dp"
+             android:layout_marginRight="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="50dp" >
+            <TextView
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="After Intermediate"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+         </android.support.v7.widget.CardView>
+         <android.support.v7.widget.CardView
+             android:id="@+id/afterintergovtjobs"
+             android:layout_marginTop="5dp"
+             android:layout_marginRight="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="50dp" >
+            <TextView
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="After Intermediate Govt-Jobs"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+         </android.support.v7.widget.CardView>
+         <android.support.v7.widget.CardView
+             android:id="@+id/afterinterjobs"
+             android:layout_marginTop="5dp"
+             android:layout_marginRight="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="50dp" >
+            <TextView
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="After Intermediate Job Oriented Courses"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+         </android.support.v7.widget.CardView>
+      </LinearLayout>
+   </ScrollView>
+</RelativeLayout>
