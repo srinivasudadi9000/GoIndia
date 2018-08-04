@@ -11,10 +11,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Home extends Activity {
-    CardView card_view_fycp;
+public class Home extends Activity implements View.OnClickListener {
+    CardView card_view_fycp, dob_card;
 
-     @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
@@ -24,14 +24,25 @@ public class Home extends Activity {
         // 2. d.ob to set ur career
         // 3. after tenth & more
         // 4. find ur career through hobbies ..trending technology
+        dob_card = (CardView) findViewById(R.id.dob_card);
+        card_view_fycp = (CardView) findViewById(R.id.card_view_fycp);
+        dob_card.setOnClickListener(this);
+        card_view_fycp.setOnClickListener(this);
+    }
 
-         card_view_fycp  = (CardView) findViewById(R.id.card_view_fycp);
-         card_view_fycp.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 Intent card_view_fycp = new Intent(Home.this,Careepath.class);
-                 startActivity(card_view_fycp);
-             }
-         });
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.card_view_fycp:
+                Intent card_view_fycp = new Intent(Home.this, Careepath.class);
+                card_view_fycp.putExtra("value","1");
+                startActivity(card_view_fycp);
+                break;
+            case R.id.dob_card:
+                Intent dob_card = new Intent(Home.this, Careepath.class);
+                dob_card.putExtra("value","2");
+                startActivity(dob_card);
+                break;
+        }
     }
 }

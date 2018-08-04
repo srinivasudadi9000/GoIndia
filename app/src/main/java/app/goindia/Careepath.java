@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.ScaleGestureDetector;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Careepath extends Activity {
@@ -16,13 +18,17 @@ public class Careepath extends Activity {
     private ScaleGestureDetector mScaleGestureDetector;
     private float mScaleFactor = 1.0f;
     private ImageView mImageView;
+    EditText dob_edtxt;
+    LinearLayout dob_ll,display_ll;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.careepath);
+        display_ll = (LinearLayout) findViewById(R.id.display_ll);
+        dob_ll = (LinearLayout) findViewById(R.id.dob_ll);
         goindia_htv = (TextView) findViewById(R.id.heading_tv);
         goindia_htv.setText("Find your career path");
-
+        dob_edtxt = (EditText) findViewById(R.id.dob_edtxt);
         beforetenth = (CardView) findViewById(R.id.beforetenth);
         aftertenth = (CardView) findViewById(R.id.aftertenth);
         aftertenthgvtjobs = (CardView) findViewById(R.id.aftertenthgvtjobs);
@@ -31,6 +37,11 @@ public class Careepath extends Activity {
         afterintergovtjobs = (CardView) findViewById(R.id.afterintergovtjobs);
         afterinterjobs = (CardView) findViewById(R.id.afterinterjobs);
 
+        if (getIntent().getStringExtra("value").equals("1")){
+            dob_ll.setVisibility(View.GONE);
+        }else {
+             display_ll.setVisibility(View.GONE);
+        }
         beforetenth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
