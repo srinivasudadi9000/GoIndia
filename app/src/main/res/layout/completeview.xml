@@ -5,10 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="app.goindia.Completeview">
-
+    <include
+        android:id="@+id/header_head"
+        layout="@layout/header_back"></include>
     <ImageView
+        android:visibility="gone"
         android:src="@drawable/mytenth"
         android:id="@+id/display_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/header_head"
+        android:id="@+id/details_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
 </RelativeLayout>

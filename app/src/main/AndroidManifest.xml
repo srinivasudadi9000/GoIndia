@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".Home" />
         <activity android:name=".Careepath" />
-        <activity android:name=".Completeview"></activity>
+        <activity android:name=".Completeview" />
+        <activity android:name=".Additon"></activity>
     </application>
 
 </manifest>
