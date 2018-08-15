@@ -35,16 +35,28 @@
         android:layout_marginTop="10dp">
 
         <RadioButton
+            android:id="@+id/type_rb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="If Before Tenth" />
+        <RadioButton
             android:id="@+id/aftertenth_rb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="If After Tenth" />
 
+
         <RadioButton
-            android:id="@+id/type_rb"
+            android:id="@+id/afterinter_rb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="If Before Tenth" />
+            android:text="If After Inter" />
+        <RadioButton
+            android:id="@+id/jobs_rb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jobs" />
+
     </RadioGroup>
 
     <Button

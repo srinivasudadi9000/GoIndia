@@ -1,6 +1,7 @@
 package app.goindia;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,11 +19,12 @@ import java.util.Date;
 public class Additon extends Activity {
     EditText title_et;
     RadioGroup myradiogrp;
-    RadioButton radiotxt;
+    RadioButton radiotxt, afterinter_rb, jobs_rb;
     TextView heading_tv;
     Button save_btn;
     String status = "no";
     ImageView flag_img;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +40,14 @@ public class Additon extends Activity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 int selectedId = group.getCheckedRadioButtonId();
                 radiotxt = (RadioButton) findViewById(selectedId);
+                afterinter_rb = (RadioButton) findViewById(selectedId);
+                jobs_rb = (RadioButton) findViewById(selectedId);
                 if (radiotxt.getText().toString().equals("If After Tenth")) {
                     status = "2";
+                } else if (afterinter_rb.getText().toString().equals("If After Inter")) {
+                    status = "3";
+                } else if (jobs_rb.getText().toString().equals("Jobs")) {
+                    status = "4";
                 } else {
                     status = "1";
                 }
@@ -61,6 +69,10 @@ public class Additon extends Activity {
 
                     DBHelper dbHelper = new DBHelper(Additon.this);
                     dbHelper.insertProject(title_et.getText().toString(), status, "2", cdt, Additon.this);
+
+                    Intent addition= new Intent(Additon.this,Additon.class);
+                    startActivity(addition);
+                    finish();
                 }
             }
         });

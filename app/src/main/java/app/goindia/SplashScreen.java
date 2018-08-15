@@ -25,5 +25,7 @@ TextView goindia;
                   startActivity(home);
               }
           },2000);
+
+        DBHelper dbHelper = new DBHelper(SplashScreen.this);
     }
 }

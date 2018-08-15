@@ -18,15 +18,16 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Careepath extends Activity implements View.OnClickListener{
+public class Careepath extends Activity implements View.OnClickListener {
     TextView goindia_htv;
-    CardView beforetenth,aftertenth,aftertenthgvtjobs,aftertenthpvtjobs,afterinter,afterintergovtjobs,afterinterjobs;
+    CardView beforetenth, aftertenth, aftertenthgvtjobs, aftertenthpvtjobs, afterinter, afterintergovtjobs, afterinterjobs;
     private ScaleGestureDetector mScaleGestureDetector;
     private float mScaleFactor = 1.0f;
     private ImageView mImageView;
     EditText dob_edtxt;
-    LinearLayout dob_ll,display_ll;
-    ImageView search_img,flag_img;
+    LinearLayout dob_ll, display_ll;
+    ImageView search_img, flag_img;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,13 +47,18 @@ public class Careepath extends Activity implements View.OnClickListener{
         afterintergovtjobs = (CardView) findViewById(R.id.afterintergovtjobs);
         afterinterjobs = (CardView) findViewById(R.id.afterinterjobs);
 
-        if (getIntent().getStringExtra("value").equals("1")){
+        if (getIntent().getStringExtra("value").equals("1")) {
             dob_ll.setVisibility(View.GONE);
-        }else {
-             display_ll.setVisibility(View.GONE);
+        } else {
+            display_ll.setVisibility(View.GONE);
         }
         beforetenth.setOnClickListener(this);
+        aftertenth.setOnClickListener(this);
+        aftertenthgvtjobs.setOnClickListener(this);
+        aftertenthpvtjobs.setOnClickListener(this);
         afterinter.setOnClickListener(this);
+        afterintergovtjobs.setOnClickListener(this);
+        afterinterjobs.setOnClickListener(this);
         search_img.setOnClickListener(this);
         flag_img.setOnClickListener(this);
     }
@@ -60,17 +66,43 @@ public class Careepath extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.beforetenth:
-                Intent compleview = new Intent(Careepath.this,Completeview.class);
-                compleview.putExtra("path","aftertenth");
+                Intent compleview = new Intent(Careepath.this, Completeview.class);
+                compleview.putExtra("path", "1");
                 startActivity(compleview);
                 break;
+            case R.id.aftertenth:
+                Intent aftertenth = new Intent(Careepath.this, Completeview.class);
+                aftertenth.putExtra("path", "2");
+                startActivity(aftertenth);
+                break;
             case R.id.afterinter:
-                Intent cv = new Intent(Careepath.this,Completeview.class);
-                cv.putExtra("path","afterinter");
+                Intent cv = new Intent(Careepath.this, Completeview.class);
+                cv.putExtra("path", "3");
                 startActivity(cv);
                 break;
+            case R.id.aftertenthgvtjobs:
+                Intent cvw= new Intent(Careepath.this, Completeview.class);
+                cvw.putExtra("path", "4");
+                startActivity(cvw);
+                break;
+            case R.id.aftertenthpvtjobs:
+                Intent cva = new Intent(Careepath.this, Completeview.class);
+                cva.putExtra("path", "4");
+                startActivity(cva);
+                break;
+            case R.id.afterintergovtjobs:
+                Intent cve = new Intent(Careepath.this, Completeview.class);
+                cve.putExtra("path", "4");
+                startActivity(cve);
+                break;
+            case R.id.afterinterjobs:
+                Intent cv1= new Intent(Careepath.this, Completeview.class);
+                cv1.putExtra("path", "3");
+                startActivity(cv1);
+                break;
+
             case R.id.search_img:
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -82,11 +114,11 @@ public class Careepath extends Activity implements View.OnClickListener{
                     long minutes = seconds / 60;
                     long hours = minutes / 60;
                     long days = hours / 24;
-                    System.out.println("how many dayes :"+days/365);
-                    if (days/365 >=15){
+                    System.out.println("how many dayes :" + days / 365);
+                    if (days / 365 >= 15) {
                         display_ll.setVisibility(View.VISIBLE);
-                    }else {
-                        Toast.makeText(getBaseContext(),"You are below 15 Years",Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getBaseContext(), "You are below 15 Years", Toast.LENGTH_SHORT).show();
                     }
                 } catch (ParseException e) {
                     e.printStackTrace();

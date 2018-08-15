@@ -71,7 +71,7 @@ public class Completeview extends Activity {
         db = openOrCreateDatabase("COURSE", Context.MODE_PRIVATE, null);
 
        // Cursor c = db.rawQuery("SELECT * FROM messages WHERE status=2  ORDER BY cdt DESC ", null);
-        Cursor c = db.rawQuery("SELECT * FROM messages ORDER BY cdt DESC ", null);
+        Cursor c = db.rawQuery("SELECT * FROM messages WHERE status='"+getIntent().getStringExtra("path")+"'ORDER BY cdt DESC ", null);
         Log.d("overallstring", c.toString());
         String ccc = String.valueOf(c.getCount());
         // Toast.makeText(getBaseContext(),"installation "+ccc.toString(),Toast.LENGTH_SHORT).show();
