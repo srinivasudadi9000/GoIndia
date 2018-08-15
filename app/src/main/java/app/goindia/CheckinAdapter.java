@@ -3,6 +3,7 @@ package app.goindia;
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -20,12 +21,16 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+
 public class CheckinAdapter extends RecyclerView.Adapter<CheckinAdapter.CheckIn> {
     ArrayList<Checkins> checkIns;
     int Rowlayout;
     Context context;
+
     public CheckinAdapter(ArrayList<Checkins> checkins, int check_single, Context applicationContext) {
-        this.context = applicationContext; this.Rowlayout = check_single;this.checkIns = checkins;
+        this.context = applicationContext;
+        this.Rowlayout = check_single;
+        this.checkIns = checkins;
     }
 
     @Override
@@ -37,9 +42,22 @@ public class CheckinAdapter extends RecyclerView.Adapter<CheckinAdapter.CheckIn>
 
     @SuppressLint({"NewApi", "ResourceAsColor"})
     @Override
-    public void onBindViewHolder(CheckIn holder, int position) {
+    public void onBindViewHolder(final CheckIn holder, int position) {
         holder.title_tv.setText(checkIns.get(position).getTitle());
-
+        holder.title_tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (holder.title_tv.getText().toString().contains("tenth")){
+                    Intent call = new Intent(context,CompleteviewImage.class);
+                    call.putExtra("path","afterinter");
+                    context.startActivity(call);
+                }else {
+                    Intent call = new Intent(context,CompleteviewImage.class);
+                    call.putExtra("path","aftertenth");
+                    context.startActivity(call);
+                }
+            }
+        });
     }
 
     @Override
@@ -47,7 +65,7 @@ public class CheckinAdapter extends RecyclerView.Adapter<CheckinAdapter.CheckIn>
         return checkIns.size();
     }
 
-    public class CheckIn extends RecyclerView.ViewHolder{
+    public class CheckIn extends RecyclerView.ViewHolder {
         TextView title_tv;
 
         public CheckIn(View itemView) {

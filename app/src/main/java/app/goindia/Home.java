@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Home extends Activity implements View.OnClickListener {
-    CardView card_view_fycp, dob_card, aftertenth_cv;
+    CardView card_view_fycp, dob_card, aftertenth_cv,hobbies;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,10 @@ public class Home extends Activity implements View.OnClickListener {
         dob_card = (CardView) findViewById(R.id.dob_card);
         card_view_fycp = (CardView) findViewById(R.id.card_view_fycp);
         aftertenth_cv = (CardView) findViewById(R.id.aftertenth_cv);
+        hobbies = (CardView) findViewById(R.id.hobbies);
+        hobbies.setOnClickListener(this);
         aftertenth_cv.setOnClickListener(this);
+
         dob_card.setOnClickListener(this);
         card_view_fycp.setOnClickListener(this);
     }
@@ -49,6 +52,11 @@ public class Home extends Activity implements View.OnClickListener {
                 Intent add = new Intent(Home.this, Additon.class);
                 add.putExtra("value", "2");
                 startActivity(add);
+                break;
+            case R.id.hobbies:
+                Intent hobbies = new Intent(Home.this, hobbiess.class);
+                hobbies.putExtra("value", "2");
+                startActivity(hobbies);
                 break;
         }
     }

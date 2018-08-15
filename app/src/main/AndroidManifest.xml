@@ -20,6 +20,8 @@
         <activity android:name=".Careepath" />
         <activity android:name=".Completeview" />
         <activity android:name=".Additon"></activity>
+        <activity android:name=".CompleteviewImage"></activity>
+        <activity android:name=".hobbiess"></activity>
     </application>
 
 </manifest>
