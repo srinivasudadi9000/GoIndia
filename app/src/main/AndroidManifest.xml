@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen">
+        <activity android:name=".Catalog">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,9 +19,17 @@
         <activity android:name=".Home" />
         <activity android:name=".Careepath" />
         <activity android:name=".Completeview" />
-        <activity android:name=".Additon"></activity>
-        <activity android:name=".CompleteviewImage"></activity>
-        <activity android:name=".hobbiess"></activity>
-    </application>
+        <activity android:name=".Additon" />
+        <activity android:name=".CompleteviewImage" />
+        <activity android:name=".hobbiess" />
+        <activity android:name=".SplashScreen"></activity>
+        <activity android:name=".EditorActivity"></activity>
+
+        <provider android:name="app.goindia.PetProvider"
+            android:authorities="app.goindia"
+            android:enabled="true"
+            android:exported="true" >
+        </provider>
+     </application>
 
 </manifest>
